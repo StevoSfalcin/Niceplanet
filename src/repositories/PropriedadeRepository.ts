@@ -4,7 +4,7 @@ import { prisma } from '../database';
 
 
 class PropriedadeRepository implements IPropriedadeRepository {
-  public async list(numeroCar: string): Promise<Propriedade[]> {
+  public async listByCar(numeroCar: string): Promise<Propriedade[]> {
     const propriedades = await prisma.propriedade.findMany({
       where: { numeroCar },
       include: {

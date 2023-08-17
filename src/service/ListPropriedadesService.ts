@@ -4,7 +4,7 @@ class ListPropriedadesService {
   constructor(private PropriedadeRepository: IPropriedadeRepository) {}
 
   public async execute(numeroCar: string) {
-    const propriedade = await this.PropriedadeRepository.list(numeroCar);
+    const propriedade = await this.PropriedadeRepository.listByCar(numeroCar);
     return propriedade;
   }
 }

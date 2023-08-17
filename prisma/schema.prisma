@@ -51,3 +51,16 @@ model Vinculo {
   produtor Produtor @relation(fields: [idProdutor], references: [idProdutor])
   @@map("vinculos")
 }
+
+model AnaliseAutomatica {
+  id                   Int      @id @default(autoincrement())
+  produtorNome         String?
+  produtorCpf          String?
+  propriedadeNome      String?
+  car                  String?  @unique
+  municipio            String?
+  uf                   String?
+  estadoMonitoramento  Int?
+  status               Int?
+  @@map("analiseAutomatica")
+}
