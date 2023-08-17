@@ -39,6 +39,8 @@ model Produtor {
   nomeProdutor String?
   status Int     @default(1)
   propriedades Vinculo[]
+  @@map("produtores")
+
 }
 
 model Vinculo {
@@ -47,4 +49,5 @@ model Vinculo {
   idProdutor Int
   propriedade Propriedade @relation(fields: [idPropriedade], references: [idPropriedade])
   produtor Produtor @relation(fields: [idProdutor], references: [idProdutor])
+  @@map("vinculos")
 }

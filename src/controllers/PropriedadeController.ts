@@ -5,7 +5,7 @@ import { PropriedadeRepository } from '../repositories/PropriedadeRepository';
 export default {
   async listPropriedades(request: Request, response: Response) {
     try {
-      const { numeroCar } = request.body;
+      const { numeroCar } = request.params;
 
       const listPropriedades = new ListPropriedadesService(new PropriedadeRepository());
 
@@ -21,4 +21,5 @@ export default {
       return response.json({ error: true, message: errorMessage });
     }
   }
+
 };
