@@ -38,6 +38,7 @@ export default {
         });
         if (response.data.error === false) {
           localStorage.setItem('token', response.data.accessToken);
+          this.$router.push('/') 
         }
 
       } catch (error) {

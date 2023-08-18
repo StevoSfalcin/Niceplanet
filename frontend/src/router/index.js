@@ -20,6 +20,7 @@ const router = createRouter({
   ],
 });
 
+// Autenticacao de rotas
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
     const token = localStorage.getItem('token');
