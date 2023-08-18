@@ -7,8 +7,8 @@
         <button class="btn btn-primary" @click="carregarPropriedades">Pesquisar</button>
       </div>
     </div>
-    <div class="container">
-      <h1 class="my-4">Minha Lista de Propriedades</h1>
+    <div class="container text-center">
+      <h1 class="my-4 fs-4 text-white">Lista de Propriedades</h1>
       <table class="table table-striped">
         <thead class="table-light">
           <tr>
@@ -21,8 +21,8 @@
         </thead>
         <tbody>
           <tr v-for="(propriedade, index) in propriedades" :key="index">
-            <td>{{ propriedade.nomePropriedade }}</td>
-            <td>{{ propriedade.numeroCar }}</td>
+            <td class="text-break">{{ propriedade.nomePropriedade }}</td>
+            <td class="text-break">{{ propriedade.numeroCar }}</td>
             <td>{{ propriedade.municipio }}</td>
             <td>{{ propriedade.uf }}</td>
             <td>
@@ -30,6 +30,9 @@
                 Detalhes
               </button>
             </td>
+          </tr>
+          <tr v-if="propriedades.length === 0 ">
+            <td colspan="5"><span>Sem dados no momento.</span></td>
           </tr>
         </tbody>
       </table>
@@ -44,8 +47,8 @@
             <h3>Detalhes</h3>
             <span><strong>Nome Propriedade:</strong> {{ detalhesPropriedade.nomePropriedade }}</span><br>
             <span><strong>Numero Car:</strong> {{ detalhesPropriedade.numeroCar }}</span><br>
-            <span><strong>Nome Estado:</strong> {{ detalhesPropriedade.uf }}</span><br>
-            <span><strong>Nome Município:</strong> {{ detalhesPropriedade.municipio }}</span><br>
+            <span><strong>Estado:</strong> {{ detalhesPropriedade.uf }}</span><br>
+            <span><strong>Município:</strong> {{ detalhesPropriedade.municipio }}</span><br>
             <strong>Estado Monitoramento:</strong>
             <span :class="{
               'text-danger': detalhesPropriedade.liberado === 0,
@@ -102,7 +105,7 @@ export default {
     },
     exibirDetalhes(propriedade) {
       this.detalhesPropriedade = propriedade;
-    }
+    },
   },
 };
 </script>
@@ -110,6 +113,8 @@ export default {
 <style scoped>
 .item-list {
   font-family: Arial, sans-serif;
+  background-image: url("https://niceplanet.com.br/static/media/depoimentoSatelite.c20a88b2becfa58e97fa.png");
+  height: 100vh;
 }
 .header {
   background-color: #343a40;

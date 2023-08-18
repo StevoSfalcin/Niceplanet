@@ -40,6 +40,11 @@ class AnaliseAutomaticaRepository implements IAnaliseAutomaticaRepository {
     }
   }
   public async listByCar(carNumber: string): Promise<AnaliseAutomatica[]> {
+
+    if (carNumber === 'all') {
+      const analisesAutomaticas = await prisma.analiseAutomatica.findMany();
+      return analisesAutomaticas;
+    }
     const analisesAutomaticas = await prisma.analiseAutomatica.findMany({
       where: {
         car: carNumber,
