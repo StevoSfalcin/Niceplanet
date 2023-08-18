@@ -42,7 +42,7 @@ export default {
         });
         if (response.data.error === false) {
           localStorage.setItem('token', response.data.accessToken);
-          this.$router.push('/') 
+          this.$router.push('/');
         }else {
           this.toast(response.data.message, {
             position: "top-right", 
@@ -52,11 +52,24 @@ export default {
             type: 'warning',
           });
         }
-
       } catch (error) {
         console.error('Erro ao fazer login:', error);
       }
     },
+    async validadeTokenExistente(token) {
+      axios.post('http://localhost:3000/validate-token', { token })
+        .then(response => {
+          if (response.data.error == false) {
+            this.$router.push('/');
+          }
+        });
+    }
+  },
+  mounted() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.validadeTokenExistente(token);
+    }
   },
 };
 </script>

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import AnaliseAutomatica from '../views/AnaliseAutomatica.vue';
 import Login from '../views/Login.vue';
 import axios from 'axios';
 
@@ -10,6 +11,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/analiseAutomatica',
+      name: 'analiseAutomatica',
+      component: AnaliseAutomatica,
       meta: { requiresAuth: true },
     },
     {

@@ -8,7 +8,11 @@
       </div>
     </div>
     <div class="container text-center">
-      <h1 class="my-4 fs-4 text-white">Lista de Propriedades</h1>
+      <div class="d-flex justify-content-around">
+        <div></div>
+        <h1 class="my-4 fs-4 text-white">Lista de Propriedades</h1>
+        <button @click="$router.push('/analiseAutomatica')" class="btn btn-success  btn-sm">Ver analises Automatica</button>
+      </div>
       <table class="table table-striped">
         <thead class="table-light">
           <tr>
@@ -115,10 +119,10 @@ export default {
     },
     toast(texto, tipo) {
       this.toast(texto, {
-        position: "top-right", // Change the toast position
-        timeout: 2000, // Set a different timeout for this toast
-        closeOnClick: true, // Allow the user to close the toast by clicking on it
-        pauseOnFocusLoss: false, // Don't pause the timer when the window loses focus
+        position: "top-right",
+        timeout: 2000,
+        closeOnClick: true,
+        pauseOnFocusLoss: false,
         type: tipo,
     });
   }
@@ -149,5 +153,8 @@ export default {
 .container {
   margin: 0 auto;
   padding: 20px;
+}
+.container button{
+  height: 3rem;
 }
 </style>
