@@ -36,8 +36,7 @@ export default {
           username: this.username,
           password: this.password,
         });
-
-        if (response.data.error === 'false') {
+        if (response.data.error === false) {
           localStorage.setItem('token', response.data.accessToken);
         }
 

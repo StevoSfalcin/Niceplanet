@@ -46,7 +46,7 @@ export default {
   },
 
   async validateToken(req: Request, res: Response, next: NextFunction) {
-    const token = req.headers.authorization?.split(' ')[1];
+    const token: string | undefined = req.headers.authorization?.split(' ')[1] || req.body.token;
 
     if (!token) {
       return res.json({ error: true, message: 'Token não fornecido' });
@@ -59,6 +59,9 @@ export default {
 
     try {
       jwt.verify(token, 'secret_key');
+      if (req.body.token) {
+        return res.json({ error: false, message: 'Token Validade' });
+      }
       next();
     } catch (error) {
       return res.json({ error: true, message: 'Token inválido' });
