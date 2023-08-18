@@ -76,6 +76,7 @@
 
 <script>
 import axios from 'axios';
+import { useToast } from 'vue-toastification';
 
 export default {
   data() {
@@ -84,6 +85,10 @@ export default {
       codigoCar: '',
       detalhesPropriedade: {},
     };
+  },
+  setup() {
+    const toast = useToast();
+    return { toast }
   },
   methods: {
     carregarPropriedades() {
@@ -95,17 +100,28 @@ export default {
         .then(response => {
           if (response.data.error === false) {
             this.propriedades = response.data.propriedades;
+            this.toast(response.data.message, 'success');
           } else {
             console.error('Erro ao buscar as propriedades:', response.data.message);
+            this.toast(response.data.message, 'warning');
           }
-        })
-        .catch(error => {
+        }).catch(error => {
           console.error('Erro ao buscar as propriedades:', error);
+          this.toast(response.data.message, 'warning');
         });
     },
     exibirDetalhes(propriedade) {
       this.detalhesPropriedade = propriedade;
     },
+    toast(texto, tipo) {
+      this.toast(texto, {
+        position: "top-right", // Change the toast position
+        timeout: 2000, // Set a different timeout for this toast
+        closeOnClick: true, // Allow the user to close the toast by clicking on it
+        pauseOnFocusLoss: false, // Don't pause the timer when the window loses focus
+        type: tipo,
+    });
+  }
   },
 };
 </script>

@@ -20,6 +20,7 @@
 
 <script>
 import axios from 'axios';
+import { useToast } from 'vue-toastification';
 
 export default {
   data() {
@@ -28,9 +29,12 @@ export default {
       password: '',
     };
   },
+  setup() {
+    const toast = useToast();
+    return { toast }
+  },
   methods: {
     async submitForm() {
-      console.log('ssssssss');
       try {
         const response = await axios.post('http://localhost:3000/login', {
           username: this.username,
@@ -39,6 +43,14 @@ export default {
         if (response.data.error === false) {
           localStorage.setItem('token', response.data.accessToken);
           this.$router.push('/') 
+        }else {
+          this.toast(response.data.message, {
+            position: "top-right", 
+            timeout: 999000,
+            closeOnClick: true,
+            pauseOnFocusLoss: false,
+            type: 'warning',
+          });
         }
 
       } catch (error) {
