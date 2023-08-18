@@ -19,18 +19,17 @@ export default {
       });
 
       if (!user || !user.senhaUsuario) {
-        return res.status(400).send('Usuário não encontrado');
+        return res.json({ error: true, message: 'Usuário não encontrado' });
       }
 
       if (password === user.senhaUsuario) {
         const accessToken = jwt.sign({ username: user.nomeUsuario, id: user.idUsuario }, 'secret_key'); // Use uma chave secreta mais segura
-        res.json({ accessToken });
+        res.json({ error: false, accessToken });
       } else {
-        res.status(401).send('Senha incorreta');
+        res.json({ error: true, message: 'Senha incorreta' });
       }
     } catch (error) {
-      console.error('Erro ao fazer login:', error);
-      res.status(500).send('Erro interno do servidor');
+      res.json({ error: true, message: error });
     }
   },
 
@@ -39,9 +38,10 @@ export default {
 
     if (token) {
       tokenBlacklist.push(token);
-      res.status(200).send('Token adicionado à lista negra com sucesso');
+      res.json({ error: false, message: 'Token adicionado à lista negra com sucesso' });
     } else {
-      res.status(400).send('Token não fornecido');
+      res.json({ error: true, message: 'Token não fornecido' });
+
     }
   },
 
@@ -49,18 +49,20 @@ export default {
     const token = req.headers.authorization?.split(' ')[1];
 
     if (!token) {
-      return res.status(401).send('Token não fornecido');
+      return res.json({ error: true, message: 'Token não fornecido' });
+
     }
 
     if (tokenBlacklist.includes(token)) {
-      return res.status(401).send('Token inválido');
+      return res.json({ error: true, message: 'Token inválido' });
     }
 
     try {
       jwt.verify(token, 'secret_key');
       next();
     } catch (error) {
-      res.status(401).send('Token inválido');
+      return res.json({ error: true, message: 'Token inválido' });
+
     }
   },
 };
