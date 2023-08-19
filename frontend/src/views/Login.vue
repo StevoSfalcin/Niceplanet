@@ -46,7 +46,7 @@ export default {
         }else {
           this.toast(response.data.message, {
             position: "top-right", 
-            timeout: 999000,
+            timeout: 2000,
             closeOnClick: true,
             pauseOnFocusLoss: false,
             type: 'warning',

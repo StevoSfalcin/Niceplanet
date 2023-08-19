@@ -11,7 +11,7 @@
       <div class="d-flex justify-content-around">
         <div></div>
         <h1 class="my-4 fs-4 text-white">Lista de Propriedades</h1>
-        <button @click="$router.push('/analiseAutomatica')" class="btn btn-success  btn-sm">Ver analises Automatica</button>
+        <button @click="$router.push('/analiseAutomatica')" class="btn btn-success  btn-sm">Ver Analises Automática</button>
       </div>
       <table class="table table-striped">
         <thead class="table-light">

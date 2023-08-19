@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="container text-center">
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-between">
         <div></div>
         <h1 class="my-4 fs-4 text-white">Lista de Propriedades</h1>
         <button @click="$router.push('/')" class="btn btn-success  btn-sm">Ver Propriedades</button>
@@ -93,7 +93,8 @@ export default {
   },
   methods: {
     carregarAnalises() {
-      axios.get(`http://localhost:3000/analiseAutomaticas/${this.codigoCar}`, {
+      const codigo = this.codigoCar === '' ? 'all' : this.codigoCar;
+      axios.get(`http://localhost:3000/analiseAutomaticas/${codigo}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         }
@@ -143,9 +144,7 @@ export default {
     },
   },
   mounted() {
-    this.codigoCar = 'all';
     this.carregarAnalises();
-    this.codigoCar = '';
   },
 };
 </script>

@@ -1,0 +1,849 @@
+{
+	"info": {
+		"_postman_id": "3fdc6435-18ad-421d-bc45-c1e714fe44db",
+		"name": "niceplanet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13858862"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Administrador\",\r\n  \"password\": \"root\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Dados corretos",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Administrador\",\r\n  \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-eBlhbo+OBrnvnIzSC6YcQZZi+H4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:30:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmFkb3IiLCJpZCI6MSwiaWF0IjoxNjkyMzU4MjE5fQ.RYXNO5Z7At2Dcmblbr-0UpRhct9ot1hhrFrD9Gme_eA\"\n}"
+				},
+				{
+					"name": "Senha invalida",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Administrador\",\r\n  \"password\": \"rootr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-IVDOjvmfyPHfsXwLzHqJe5w9oeM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:31:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Senha incorreta"
+				},
+				{
+					"name": "Usuário não encontrado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Administrdador\",\r\n  \"password\": \"roodtr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "24"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18-9iSkUFKSnMgf2rkkOctlQcvJY7w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:32:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Usuário não encontrado"
+				}
+			]
+		},
+		{
+			"name": "Propriedades",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmFkb3IiLCJpZCI6MSwiaWF0IjoxNjkyMzU4NDAwfQ.112XipKLiiLug_V7j3A6BFqTcPDYypmQZ7WqIOm13bo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/propriedades/PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"propriedades",
+						"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Listagem de Propriedades",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/propriedades/PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"propriedades",
+								"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "932"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a4-8kXn7CoSu+sbNwg83SL4b7vg6TI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:37:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Propriedades listadas com sucesso\",\n    \"propriedades\": [\n        {\n            \"idPropriedade\": 2,\n            \"nomePropriedade\": \"Fazenda Boi Dourado 1\",\n            \"numeroCar\": \"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323\",\n            \"uf\": null,\n            \"municipio\": \"Redenção\",\n            \"pais\": \"Brasil\",\n            \"status\": 1,\n            \"liberado\": 0,\n            \"produtores\": [\n                {\n                    \"idVinculo\": 4,\n                    \"idPropriedade\": 2,\n                    \"idProdutor\": 4,\n                    \"produtor\": {\n                        \"idProdutor\": 4,\n                        \"registroIndividual\": \"307.878.410-05\",\n                        \"nomeProdutor\": \"Benjamin Bruno Nogueira\",\n                        \"status\": 1\n                    }\n                },\n                {\n                    \"idVinculo\": 11,\n                    \"idPropriedade\": 2,\n                    \"idProdutor\": 1,\n                    \"produtor\": {\n                        \"idProdutor\": 1,\n                        \"registroIndividual\": \"353.920.370-20\",\n                        \"nomeProdutor\": \"Manuel Theo da Mata\",\n                        \"status\": 1\n                    }\n                },\n                {\n                    \"idVinculo\": 15,\n                    \"idPropriedade\": 2,\n                    \"idProdutor\": 7,\n                    \"produtor\": {\n                        \"idProdutor\": 7,\n                        \"registroIndividual\": \"\",\n                        \"nomeProdutor\": \"Daniel Vitor\",\n                        \"status\": 1\n                    }\n                },\n                {\n                    \"idVinculo\": 19,\n                    \"idPropriedade\": 2,\n                    \"idProdutor\": 3,\n                    \"produtor\": {\n                        \"idProdutor\": 3,\n                        \"registroIndividual\": \"497.595.602-08\",\n                        \"nomeProdutor\": \"Evelyn Camila Raquel Ramos\",\n                        \"status\": 1\n                    }\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"name": "Nenhuma propriedade encontrada",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/propriedades/PA-wdwd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"propriedades",
+								"PA-wdwd"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4c-/fFRxVoq12pa2zEP8hiie1HS5dI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:39:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Nenhuma propriedade encontrada\",\n    \"propriedades\": []\n}"
+				},
+				{
+					"name": "Token inválido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/propriedades/PA-wdwd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"propriedades",
+								"PA-wdwd"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-moN8TNwcn1LYZp4f+1RBhlkPBoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:40:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Token inválido"
+				}
+			]
+		},
+		{
+			"name": "Analise Automatica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmFkb3IiLCJpZCI6MSwiaWF0IjoxNjkyMzU4NDAwfQ.112XipKLiiLug_V7j3A6BFqTcPDYypmQZ7WqIOm13bo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/analiseAutomaticas/PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"analiseAutomaticas",
+						"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Listagem de Analise Automatica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1048"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"418-xDHgSACbuNMCVY1CDu+7u9QhNao\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:41:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Análises listadas com sucesso\",\n    \"analisesAutomaticas\": [\n        {\n            \"id\": 12,\n            \"produtorNome\": \"Benjamin Bruno Nogueira\",\n            \"produtorCpf\": \"307.878.410-05\",\n            \"propriedadeNome\": \"Fazenda Boi Dourado 1\",\n            \"car\": \"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323\",\n            \"municipio\": \"Redenção\",\n            \"uf\": null,\n            \"estadoMonitoramento\": null,\n            \"status\": 1\n        },\n        {\n            \"id\": 13,\n            \"produtorNome\": \"Manuel Theo da Mata\",\n            \"produtorCpf\": \"353.920.370-20\",\n            \"propriedadeNome\": \"Fazenda Boi Dourado 1\",\n            \"car\": \"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323\",\n            \"municipio\": \"Redenção\",\n            \"uf\": null,\n            \"estadoMonitoramento\": null,\n            \"status\": 1\n        },\n        {\n            \"id\": 14,\n            \"produtorNome\": \"Daniel Vitor\",\n            \"produtorCpf\": \"\",\n            \"propriedadeNome\": \"Fazenda Boi Dourado 1\",\n            \"car\": \"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323\",\n            \"municipio\": \"Redenção\",\n            \"uf\": null,\n            \"estadoMonitoramento\": null,\n            \"status\": 1\n        },\n        {\n            \"id\": 15,\n            \"produtorNome\": \"Evelyn Camila Raquel Ramos\",\n            \"produtorCpf\": \"497.595.602-08\",\n            \"propriedadeNome\": \"Fazenda Boi Dourado 1\",\n            \"car\": \"PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323\",\n            \"municipio\": \"Redenção\",\n            \"uf\": null,\n            \"estadoMonitoramento\": null,\n            \"status\": 1\n        }\n    ]\n}"
+				},
+				{
+					"name": "Nenhuma análise encontrada",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/wdawdawdawd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"wdawdawdawd"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"50-qelzqpoeROn6nqfrQNfJJ9XTK4o\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:42:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Nenhuma análise encontrada\",\n    \"analisesAutomaticas\": []\n}"
+				},
+				{
+					"name": "Token inválido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/wdawdawdawd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"wdawdawdawd"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-moN8TNwcn1LYZp4f+1RBhlkPBoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:43:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Token inválido"
+				},
+				{
+					"name": "Listar Todos Analise Automatica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://127.0.0.1:5173"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "772"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"304-BmgqhU1J/ev6SyQSflC0jevCW6M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 19 Aug 2023 01:22:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Análises listadas com sucesso\",\n    \"analisesAutomaticas\": [\n        {\n            \"id\": 32,\n            \"produtorNome\": \"Manuel Theo da Mata\",\n            \"produtorCpf\": \"353.920.370-20\",\n            \"propriedadeNome\": \"Fazenda Bela Vista\",\n            \"car\": \"TO-15235304-5381E1396BB4E6TFBA16CA5AE14745213\",\n            \"municipio\": \"Palmas\",\n            \"uf\": \"TO\",\n            \"estadoMonitoramento\": 1,\n            \"status\": 1\n        },\n        {\n            \"id\": 33,\n            \"produtorNome\": \"Petterson Abade\",\n            \"produtorCpf\": \"464.280.050-69\",\n            \"propriedadeNome\": \"Fazenda Bela Vista\",\n            \"car\": \"TO-15235304-5381E1396BB4E6TFBA16CA5AE14745213\",\n            \"municipio\": \"Palmas\",\n            \"uf\": \"TO\",\n            \"estadoMonitoramento\": 1,\n            \"status\": 1\n        },\n        {\n            \"id\": 34,\n            \"produtorNome\": null,\n            \"produtorCpf\": \"029.958.740-10\",\n            \"propriedadeNome\": \"Fazenda Bela Vista\",\n            \"car\": \"TO-15235304-5381E1396BB4E6TFBA16CA5AE14745213\",\n            \"municipio\": \"Palmas\",\n            \"uf\": \"TO\",\n            \"estadoMonitoramento\": 1,\n            \"status\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "AnaliseAutomatica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmFkb3IiLCJpZCI6MSwiaWF0IjoxNjkyMzU4NDAwfQ.112XipKLiiLug_V7j3A6BFqTcPDYypmQZ7WqIOm13bo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/analiseAutomaticas/11",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"analiseAutomaticas",
+						"11"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Análise automática excluída com sucess",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/15",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-2t2/fMA/Fyf4y9fkOpQ5nh041sA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:46:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Análise automática excluída com sucesso\"\n}"
+				},
+				{
+					"name": "Analise nao encontrada",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/15",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9c-+8UCXibLerx22Sv02c/2sij0Qv0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:47:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": true,\n    \"message\": {\n        \"name\": \"PrismaClientKnownRequestError\",\n        \"code\": \"P2025\",\n        \"clientVersion\": \"5.1.1\",\n        \"meta\": {\n            \"cause\": \"Record to delete does not exist.\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Token inválido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/analiseAutomaticas/15",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"analiseAutomaticas",
+								"15"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-moN8TNwcn1LYZp4f+1RBhlkPBoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 11:48:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Token inválido"
+				}
+			]
+		}
+	]
+}
