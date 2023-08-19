@@ -6,14 +6,14 @@ Frontend: Vue.js
 
 # NicePlanet
 
-Projeto desenvolvido com finalidade de teste tecnico.
+Projeto desenvolvido com finalidade de teste técnico.
 
 # Montagem do Ambiente
 
 Backend:
 
 * yarn install
-* configurar banco de dados (previante populada com dados fornecidos) no env
+* configurar banco de dados (previamente populada com dados fornecidos) no env
 * yarn dev
 
 Frontend:
@@ -21,7 +21,7 @@ Frontend:
 * npm install
 * npm run dev
 
-# Crendenciais de login
+# Credenciais de login
 ```
 Usuario: Administrador
 Senha: root
