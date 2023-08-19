@@ -13,7 +13,10 @@ Projeto desenvolvido com finalidade de teste técnico.
 Backend:
 
 * yarn install
-* configurar banco de dados (previamente populada com dados fornecidos) no env
+* configurar banco de dados (previamente populada com dados fornecidos) no .env, exemplo:
+```
+DATABASE_URL="mysql://root:root@localhost:3306/niceplanet"
+```
 * yarn dev
 
 Frontend:
