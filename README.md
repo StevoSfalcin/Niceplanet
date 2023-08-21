@@ -29,3 +29,5 @@ Frontend:
 Usuario: Administrador
 Senha: root
 ```
+
+Obs: Pretendia aplicar no front os mesmo padrões de projetos usados no back mais DTO no recebimento dos dados das propriedades e analises, mas devido a outras responsabilidades(como dito durante entrevista estou trabalhando no momento) acabou nao sobrando tempo.
